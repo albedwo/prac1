@@ -21,20 +21,37 @@
                     <div class="alert alert-info">
                         This is the table for the students
                     </div>
+                    <a class="btn btn-primary mb-3" href="{{ route('student.create') }}">
+                        Add Student
+                    </a>
 
                     <div class="card">
                         <div class="card-body p-0">
 
                             <table class="table">
                                 <thead>
+                                    <tr>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
+                                        <th>Middle Name</th>
+                                        <th>Email</th>
+                                        <th>Age</th>
+                                        <th>Address</th>
+                                        <th>Date of Birth</th>
+                                    </tr>
                                 </thead>
                                 <tbody>
-                                 {{-- @foreach($student) --}}
+                               @foreach($students as $student)
                                     <tr>
-                                        <td>Matthew Bartolomeo</td>
-                                        <td>matthewbartolomeo@sample.com</td>
+                                        <td>{{ $student->stud_fname }}</td>
+                                        <td>{{ $student->stud_lname }}</td>
+                                        <td>{{ $student->stud_mname }}</td>
+                                        <td>{{ $student->stud_email }}</td>
+                                        <td>{{ $student->stud_age }}</td>
+                                        <td>{{ $student->stud_address }}</td>
+                                        <td>{{ $student->stud_dob }}</td>
                                     </tr>
-                                {{-- @endforeach --}}
+                                @endforeach
                                 </tbody>
                             </table>
                         </div>
