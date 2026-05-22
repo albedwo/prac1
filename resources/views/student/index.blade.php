@@ -50,7 +50,13 @@
                                         <td>{{ $student->stud_age }}</td>
                                         <td>{{ $student->stud_address }}</td>
                                         <td>{{ $student->stud_dob }}</td>
-                                        <td><a href="{{ route('student.edit', $student->id) }}" class="btn btn-sm btn-warning">Edit</a><a href="{{ route('student.destroy', $student->id) }}" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this student?')">Delete</a></td>
+                                        <td><a href="{{ route('student.edit', $student->id) }}" class="btn btn-sm btn-warning">Edit</a>
+                                        <form action="{{ route('student.destroy', $student->id) }}" method="POST" class="d-inline">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this student?')">Delete</button>
+                                        </form>
+                                        </td>
                                     
                                     </tr>
                                 @endforeach
