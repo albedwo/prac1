@@ -50,6 +50,7 @@
                                         <td>{{ $student->stud_age }}</td>
                                         <td>{{ $student->stud_address }}</td>
                                         <td>{{ $student->stud_dob }}</td>
+                                    
                                     </tr>
                                 @endforeach
                                 </tbody>
