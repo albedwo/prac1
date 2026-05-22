@@ -19,6 +19,10 @@ Route::middleware('auth')->group(function () {
     Route::get('students', [\App\Http\Controllers\studentmngtController::class, 'index'])->name('student.index');
     Route::get('students/create', [\App\Http\Controllers\studentmngtController::class, 'create'])->name('student.create');
     Route::post('students', [\App\Http\Controllers\studentmngtController::class, 'store'])->name('student.store');
+    route::get('students/{id}/edit', [\App\Http\Controllers\studentmngtController::class, 'edit'])->name('student.edit');
+    route::put('students/{id}', [\App\Http\Controllers\studentmngtController::class, 'update'])->name('student.update');
+    route::delete('students/{id}', [\App\Http\Controllers\studentmngtController::class, 'destroy'])->name('student.destroy');
+    
 
     Route::get('profile', [\App\Http\Controllers\ProfileController::class, 'show'])->name('profile.show');
     Route::put('profile', [\App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update');

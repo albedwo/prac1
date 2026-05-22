@@ -50,6 +50,7 @@
                                         <td>{{ $student->stud_age }}</td>
                                         <td>{{ $student->stud_address }}</td>
                                         <td>{{ $student->stud_dob }}</td>
+                                        <td><a href="{{ route('student.edit', $student->id) }}" class="btn btn-sm btn-warning">Edit</a><a href="{{ route('student.destroy', $student->id) }}" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this student?')">Delete</a></td>
                                     
                                     </tr>
                                 @endforeach
